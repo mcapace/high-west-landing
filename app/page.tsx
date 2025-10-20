@@ -2,13 +2,12 @@
 
 import React, { useState, useEffect } from 'react';
 import { ChevronDown, MapPin, Award, Sparkles, Menu, X } from 'lucide-react';
-import { motion, useScroll, useTransform } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Image from 'next/image';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const { scrollY } = useScroll();
-  const y = useTransform(scrollY, [0, 300], [0, -50]);
+  // Removed problematic scroll effects
 
   useEffect(() => {
     if (isMenuOpen) {
@@ -114,7 +113,7 @@ export default function Home() {
 
       {/* Hero Section */}
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
-        <motion.div style={{ y }} className="absolute inset-0">
+        <div className="absolute inset-0">
           <Image
             src="/images/essential/2024-09-10 High West - OND-3543.jpg"
             alt="High West Distillery"
@@ -124,7 +123,7 @@ export default function Home() {
           />
           <div className="absolute inset-0 bg-gradient-hero"></div>
           <div className="absolute inset-0 bg-gradient-overlay"></div>
-        </motion.div>
+        </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <motion.div
@@ -418,7 +417,7 @@ export default function Home() {
               {
                 name: "Core Four",
                 description: "Our signature blend representing the four pillars of whiskey",
-                image: "/images/essential/2025-05-21 - High West-Core Four-12216.jpg",
+                image: "/images/essential/2025-05-21 - High West-Bourbon-12168.jpg",
                 price: "Shop Now"
               },
               {
@@ -486,12 +485,12 @@ export default function Home() {
               },
               {
                 quote: "The complexity and depth of High West's expressions showcase the true artistry of American distilling.",
-                author: "Wine Enthusiast", 
+                author: "Wine Spectator", 
                 rating: "Double Gold"
               },
               {
                 quote: "A masterclass in blending and aging. High West consistently delivers exceptional quality and character.",
-                author: "San Francisco World Spirits Competition",
+                author: "Cigar Aficionado",
                 rating: "Gold Medal"
               }
             ].map((testimonial, index) => (
