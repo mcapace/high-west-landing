@@ -22,31 +22,62 @@ export default function Home() {
   }, [isMenuOpen]);
 
   return (
-    <div className="min-h-screen bg-cream">
+    <div className="min-h-screen bg-gradient-to-br from-cream via-white to-cream relative overflow-hidden">
+      {/* Premium Background Effects */}
+      <div className="fixed inset-0 bg-noise opacity-5 pointer-events-none"></div>
+      <div className="fixed inset-0 bg-gradient-premium opacity-5 pointer-events-none"></div>
+      
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-sm border-b border-gold/20">
+      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gold/30 shadow-lg">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex justify-between items-center h-16">
-            <div className="flex items-center">
+          <div className="flex justify-between items-center h-20">
+            <motion.div 
+              className="flex items-center"
+              initial={{ opacity: 0, x: -20 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 0.6, ease: "easeOut" }}
+            >
               <Image
                 src="/logo/highwest_logo.png"
                 alt="High West Distillery"
-                width={120}
-                height={40}
-                className="h-10 w-auto"
+                width={140}
+                height={50}
+                className="h-12 w-auto filter drop-shadow-lg"
               />
-            </div>
+            </motion.div>
             
             {/* Desktop Navigation */}
-            <div className="hidden md:flex items-center space-x-8">
-              <a href="#about" className="text-dark-teal hover:text-gold transition-colors">About</a>
-              <a href="#products" className="text-dark-teal hover:text-gold transition-colors">Products</a>
-              <a href="#awards" className="text-dark-teal hover:text-gold transition-colors">Awards</a>
-              <a href="#visit" className="text-dark-teal hover:text-gold transition-colors">Visit</a>
-              <button className="bg-gold text-white px-6 py-2 rounded-full hover:bg-gold/90 transition-colors">
-                Shop Now
-              </button>
-            </div>
+            <motion.div 
+              className="hidden md:flex items-center space-x-8"
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
+            >
+              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
+                About
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
+                Products
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
+                Awards
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
+                Visit
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
+              </a>
+              <motion.button 
+                className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold relative overflow-hidden group"
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Shop Now</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              </motion.button>
+            </motion.div>
 
             {/* Mobile Menu Button */}
             <div className="md:hidden">
@@ -91,38 +122,58 @@ export default function Home() {
             className="object-cover"
             priority
           />
-          <div className="absolute inset-0 bg-dark-teal/40"></div>
+          <div className="absolute inset-0 bg-gradient-hero"></div>
+          <div className="absolute inset-0 bg-gradient-overlay"></div>
         </motion.div>
 
-        <div className="relative z-10 text-center text-white px-4 max-w-4xl mx-auto">
-          <motion.h1
-            initial={{ opacity: 0, y: 30 }}
+        <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
+          <motion.div
+            initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            className="text-5xl md:text-7xl font-bold mb-6"
+            transition={{ duration: 1, ease: "easeOut" }}
+            className="mb-8"
           >
-            HIGH WEST
-          </motion.h1>
-          <motion.p
-            initial={{ opacity: 0, y: 30 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="text-xl md:text-2xl mb-8 text-gold"
-          >
-            The Spirit of the West
-          </motion.p>
+            <h1 className="text-8xl md:text-9xl font-display font-bold mb-6 tracking-tight leading-none">
+              <span className="block bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent animate-shimmer">
+                HIGH WEST
+              </span>
+            </h1>
+          </motion.div>
+          
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8, delay: 0.4 }}
-            className="flex flex-col sm:flex-row gap-4 justify-center"
+            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            className="mb-12"
           >
-            <button className="bg-gold text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-gold/90 transition-colors">
-              Explore Our Story
-            </button>
-            <button className="border-2 border-white text-white px-8 py-3 rounded-full text-lg font-semibold hover:bg-white hover:text-dark-teal transition-colors">
-              Shop Collection
-            </button>
+            <p className="text-3xl md:text-4xl font-body font-light tracking-wide leading-relaxed">
+              The Spirit of the West
+            </p>
+            <div className="w-24 h-0.5 bg-gradient-gold mx-auto mt-6 animate-pulse-glow"></div>
+          </motion.div>
+          
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            className="flex flex-col sm:flex-row gap-6 justify-center items-center"
+          >
+            <motion.button 
+              className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              <span className="relative z-10">Discover Our Story</span>
+              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+            </motion.button>
+            
+            <motion.button 
+              className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-semibold hover:border-gold hover:text-gold transition-all duration-500 backdrop-blur-sm"
+              whileHover={{ scale: 1.05, y: -2 }}
+              whileTap={{ scale: 0.95 }}
+            >
+              View Products
+            </motion.button>
           </motion.div>
         </div>
 
@@ -141,51 +192,113 @@ export default function Home() {
             <ChevronDown size={24} />
           </motion.div>
         </motion.div>
+        
+        {/* Floating Elements */}
+        <motion.div 
+          className="absolute top-1/4 left-1/4 w-2 h-2 bg-gold rounded-full opacity-60"
+          animate={{ y: [-20, 20, -20] }}
+          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute top-1/3 right-1/4 w-1 h-1 bg-gold rounded-full opacity-40"
+          animate={{ y: [20, -20, 20] }}
+          transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
+        />
+        <motion.div 
+          className="absolute bottom-1/4 left-1/3 w-1.5 h-1.5 bg-gold rounded-full opacity-50"
+          animate={{ y: [-15, 15, -15] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+        />
       </section>
 
       {/* About Section */}
-      <section id="about" className="py-20 bg-white">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-12 items-center">
+      <section id="about" className="py-24 bg-gradient-to-br from-white via-cream/30 to-white relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-noise opacity-5"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-2 gap-16 items-center">
             <motion.div
               initial={{ opacity: 0, x: -50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
+              className="space-y-8"
             >
-              <h2 className="text-4xl font-bold text-dark-teal mb-6">The Spirit of the West</h2>
-              <p className="text-lg text-gray-700 mb-6">
-                It&apos;s the spirit that inspired us to ambitiously build a world-class 
-                distillation facility in the Wasatch Mountains of Utah. It&apos;s the spirit 
-                that emboldened us to push the boundaries of what you might call traditional 
-                whiskey. It&apos;s the spirit that keeps us with one foot steeped in the 
-                traditions of the West while looking toward new horizons.
-              </p>
-              <p className="text-lg text-gray-700 mb-8">
-                High West Whiskey is shaped by the adventurous, frontiering spirit that has 
-                come to define this great land, with quality to match. High West Whiskey&apos;s 
-                offerings are as vast as the hills where it&apos;s crafted, including our 
-                award-winning Bourbon and Double Rye, as well as a host of highly sought-after 
-                expressions like Rendezvous and Campfire.
-              </p>
-              <button className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors">
-                Learn More
-              </button>
+              <div className="space-y-6">
+                <motion.h2 
+                  className="text-5xl md:text-6xl font-display font-bold text-dark-teal leading-tight"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.2 }}
+                  viewport={{ once: true }}
+                >
+                  The Spirit of the West
+                </motion.h2>
+                <div className="w-16 h-1 bg-gradient-gold rounded-full"></div>
+              </div>
+              
+              <div className="space-y-6">
+                <motion.p 
+                  className="text-xl font-body text-gray-700 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.4 }}
+                  viewport={{ once: true }}
+                >
+                  It&apos;s the spirit that inspired us to ambitiously build a world-class 
+                  distillation facility in the Wasatch Mountains of Utah. It&apos;s the spirit 
+                  that emboldened us to push the boundaries of what you might call traditional 
+                  whiskey.
+                </motion.p>
+                <motion.p 
+                  className="text-xl font-body text-gray-700 leading-relaxed"
+                  initial={{ opacity: 0, y: 20 }}
+                  whileInView={{ opacity: 1, y: 0 }}
+                  transition={{ duration: 0.8, delay: 0.6 }}
+                  viewport={{ once: true }}
+                >
+                  High West Whiskey is shaped by the adventurous, frontiering spirit that has 
+                  come to define this great land, with quality to match. Our offerings are as 
+                  vast as the hills where it&apos;s crafted, including our award-winning Bourbon 
+                  and Double Rye.
+                </motion.p>
+              </div>
+              
+              <motion.button 
+                className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: 0.8 }}
+                viewport={{ once: true }}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+              >
+                <span className="relative z-10">Discover Our Story</span>
+                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              </motion.button>
             </motion.div>
             <motion.div
               initial={{ opacity: 0, x: 50 }}
               whileInView={{ opacity: 1, x: 0 }}
-              transition={{ duration: 0.8 }}
+              transition={{ duration: 0.8, ease: "easeOut" }}
               viewport={{ once: true }}
-              className="relative"
+              className="relative group"
             >
-              <Image
-                src="/images/essential/2024-09-10 High West - OND-3554.jpg"
-                alt="High West Distillery Interior"
-                width={600}
-                height={400}
-                className="rounded-lg shadow-xl"
-              />
+              <div className="relative overflow-hidden rounded-2xl shadow-2xl">
+                <Image
+                  src="/images/essential/2024-09-10 High West - OND-3554.jpg"
+                  alt="High West Distillery Interior"
+                  width={600}
+                  height={400}
+                  className="rounded-2xl transition-transform duration-700 group-hover:scale-105"
+                />
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/20 to-transparent rounded-2xl"></div>
+              </div>
+              
+              {/* Decorative Elements */}
+              <div className="absolute -top-4 -right-4 w-8 h-8 bg-gradient-gold rounded-full opacity-60 animate-pulse"></div>
+              <div className="absolute -bottom-4 -left-4 w-6 h-6 bg-gold rounded-full opacity-40 animate-float"></div>
             </motion.div>
           </div>
         </div>
