@@ -28,7 +28,13 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-16">
             <div className="flex items-center">
-              <span className="text-2xl font-bold text-dark-teal">HIGH WEST</span>
+              <Image
+                src="/logo/highwest_logo.png"
+                alt="High West Distillery"
+                width={120}
+                height={40}
+                className="h-10 w-auto"
+              />
             </div>
             
             {/* Desktop Navigation */}
@@ -350,7 +356,15 @@ export default function Home() {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="grid md:grid-cols-4 gap-8">
             <div>
-              <h3 className="text-2xl font-bold mb-4">HIGH WEST</h3>
+              <div className="mb-4">
+                <Image
+                  src="/logo/highwest_logo.png"
+                  alt="High West Distillery"
+                  width={150}
+                  height={50}
+                  className="h-12 w-auto"
+                />
+              </div>
               <p className="text-gray-300">
                 Crafting exceptional whiskey in the heart of Utah&apos;s Rocky Mountains.
               </p>
