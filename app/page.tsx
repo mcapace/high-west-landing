@@ -79,7 +79,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
-            src="/images/2024-09-10 High West - OND-3543.jpg"
+            src="/images/essential/2024-09-10 High West - OND-3543.jpg"
             alt="High West Distillery"
             fill
             className="object-cover"
@@ -174,7 +174,7 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="/images/2024-09-10 High West - OND-3554.jpg"
+                src="/images/essential/2024-09-10 High West - OND-3554.jpg"
                 alt="High West Distillery Interior"
                 width={600}
                 height={400}
@@ -207,19 +207,19 @@ export default function Home() {
               {
                 name: "Rendezvous Rye",
                 description: "Award-winning rye whiskey with complex flavors",
-                image: "/images/2025-05-21 - High West-Rendezvous-12072.jpg",
+                image: "/images/essential/2025-05-21 - High West-Rendezvous-12072.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Double Rye",
                 description: "Bold blend of two rye whiskeys with rich character",
-                image: "/images/2025-05-21 - High West-Double Rye-12064.jpg",
+                image: "/images/essential/2025-05-21 - High West-Double Rye-12064.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Campfire",
                 description: "Unique blend of bourbon, rye, and scotch",
-                image: "/images/2025-05-21 - High West-Campfire-12068.jpg",
+                image: "/images/essential/2025-05-21 - High West-Campfire-12068.jpg",
                 price: "Shop Now"
               }
             ].map((product, index) => (
@@ -309,7 +309,7 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="/images/2024-09-10 High West - OND-3560.jpg"
+                src="/images/essential/2024-09-10 High West - OND-3560.jpg"
                 alt="High West Distillery Tasting Room"
                 width={600}
                 height={400}
