@@ -388,42 +388,24 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-3 gap-8">
             {[
               {
                 name: "Rendezvous Rye",
-                description: "Award-winning rye whiskey with complex flavors and smooth finish",
+                description: "Award-winning rye whiskey with complex flavors",
                 image: "/images/essential/2025-05-21 - High West-Rendezvous-12072.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Double Rye",
-                description: "Bold blend of two rye whiskeys with rich character and depth",
+                description: "Bold blend of two rye whiskeys with rich character",
                 image: "/images/essential/2025-05-21 - High West-Double Rye-12064.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Campfire",
-                description: "Unique blend of bourbon, rye, and scotch with smoky notes",
+                description: "Unique blend of bourbon, rye, and scotch",
                 image: "/images/essential/2025-05-21 - High West-Campfire-12068.jpg",
-                price: "Shop Now"
-              },
-              {
-                name: "Bourbon Collection",
-                description: "Premium bourbon expressions with rich vanilla and oak",
-                image: "/images/essential/2025-05-21 - High West-Bourbon-12062.jpg",
-                price: "Shop Now"
-              },
-              {
-                name: "Core Four",
-                description: "Our signature blend representing the four pillars of whiskey",
-                image: "/images/essential/2025-05-21 - High West-Bourbon-12168.jpg",
-                price: "Shop Now"
-              },
-              {
-                name: "Grouping Selection",
-                description: "Curated collection showcasing our finest expressions",
-                image: "/images/essential/2025-05-21 - High West-grouping-11966.jpg",
                 price: "Shop Now"
               }
             ].map((product, index) => (
@@ -459,76 +441,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-br from-cream via-white to-cream relative overflow-hidden">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <motion.div
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.8 }}
-            viewport={{ once: true }}
-            className="text-center mb-16"
-          >
-            <h2 className="text-5xl md:text-6xl font-heading font-bold text-dark-teal mb-8">What Experts Say</h2>
-            <p className="text-xl font-spectral text-gray-700 max-w-3xl mx-auto leading-relaxed">
-              Industry recognition and expert reviews that speak to our commitment to excellence.
-            </p>
-            <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
-          </motion.div>
-
-          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
-            {[
-              {
-                quote: "High West has redefined what American whiskey can be. Their innovation while respecting tradition is remarkable.",
-                author: "Whisky Advocate",
-                rating: "95 Points"
-              },
-              {
-                quote: "The complexity and depth of High West's expressions showcase the true artistry of American distilling.",
-                author: "Wine Spectator", 
-                rating: "Double Gold"
-              },
-              {
-                quote: "A masterclass in blending and aging. High West consistently delivers exceptional quality and character.",
-                author: "Cigar Aficionado",
-                rating: "Gold Medal"
-              }
-            ].map((testimonial, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.8, delay: index * 0.2 }}
-                viewport={{ once: true }}
-                className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 group"
-              >
-                <div className="mb-6">
-                  <div className="flex text-gold mb-4">
-                    {[...Array(5)].map((_, i) => (
-                      <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
-                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
-                      </svg>
-                    ))}
-                  </div>
-                  <p className="text-lg font-spectral text-gray-700 leading-relaxed italic">
-                    &ldquo;{testimonial.quote}&rdquo;
-                  </p>
-                </div>
-                <div className="border-t border-gray-200 pt-6">
-                  <div className="flex justify-between items-center">
-                    <div>
-                      <h4 className="font-heading font-bold text-dark-teal">{testimonial.author}</h4>
-                    </div>
-                    <div className="text-gold font-elegant font-semibold">
-                      {testimonial.rating}
-                    </div>
-                  </div>
-                </div>
-              </motion.div>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Awards Section */}
       <section id="awards" className="py-20 bg-dark-teal text-white">
