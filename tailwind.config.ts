@@ -21,6 +21,9 @@ const config: Config = {
         serif: ['Playfair Display', 'serif'],
         display: ['Cormorant Garamond', 'serif'],
         body: ['Crimson Text', 'serif'],
+        heading: ['Cinzel', 'serif'],
+        elegant: ['Libre Baskerville', 'serif'],
+        spectral: ['Spectral', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {

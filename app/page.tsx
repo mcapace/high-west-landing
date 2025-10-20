@@ -133,8 +133,8 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="mb-8"
           >
-            <h1 className="text-8xl md:text-9xl font-display font-bold mb-6 tracking-tight leading-none">
-              <span className="block bg-gradient-to-r from-white via-gold to-white bg-clip-text text-transparent animate-shimmer">
+            <h1 className="text-7xl md:text-8xl font-heading font-bold mb-6 tracking-wider leading-none">
+              <span className="block text-white drop-shadow-2xl">
                 HIGH WEST
               </span>
             </h1>
@@ -146,10 +146,10 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="mb-12"
           >
-            <p className="text-3xl md:text-4xl font-body font-light tracking-wide leading-relaxed">
+            <p className="text-2xl md:text-3xl font-elegant font-normal tracking-wide leading-relaxed text-gold">
               The Spirit of the West
             </p>
-            <div className="w-24 h-0.5 bg-gradient-gold mx-auto mt-6 animate-pulse-glow"></div>
+            <div className="w-32 h-0.5 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
           
           <motion.div
@@ -227,7 +227,7 @@ export default function Home() {
             >
               <div className="space-y-6">
                 <motion.h2 
-                  className="text-5xl md:text-6xl font-display font-bold text-dark-teal leading-tight"
+                  className="text-5xl md:text-6xl font-heading font-bold text-dark-teal leading-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -240,7 +240,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 <motion.p 
-                  className="text-xl font-body text-gray-700 leading-relaxed"
+                  className="text-lg font-spectral text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -252,7 +252,7 @@ export default function Home() {
                   whiskey.
                 </motion.p>
                 <motion.p 
-                  className="text-xl font-body text-gray-700 leading-relaxed"
+                  className="text-lg font-spectral text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -287,7 +287,7 @@ export default function Home() {
             >
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
                 <Image
-                  src="/images/essential/2024-09-10 High West - OND-3554.jpg"
+                  src="/images/essential/2024-09-10 High West - OND-3673.jpg"
                   alt="High West Distillery Interior"
                   width={600}
                   height={400}
@@ -314,31 +314,50 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold text-dark-teal mb-6">Our Collection</h2>
-            <p className="text-xl text-gray-700 max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold text-dark-teal mb-8">Our Collection</h2>
+            <p className="text-xl font-spectral text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Discover our award-winning whiskeys, each crafted with precision and passion 
               in the heart of the Rocky Mountains.
             </p>
+            <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
                 name: "Rendezvous Rye",
-                description: "Award-winning rye whiskey with complex flavors",
+                description: "Award-winning rye whiskey with complex flavors and smooth finish",
                 image: "/images/essential/2025-05-21 - High West-Rendezvous-12072.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Double Rye",
-                description: "Bold blend of two rye whiskeys with rich character",
+                description: "Bold blend of two rye whiskeys with rich character and depth",
                 image: "/images/essential/2025-05-21 - High West-Double Rye-12064.jpg",
                 price: "Shop Now"
               },
               {
                 name: "Campfire",
-                description: "Unique blend of bourbon, rye, and scotch",
+                description: "Unique blend of bourbon, rye, and scotch with smoky notes",
                 image: "/images/essential/2025-05-21 - High West-Campfire-12068.jpg",
+                price: "Shop Now"
+              },
+              {
+                name: "Bourbon Collection",
+                description: "Premium bourbon expressions with rich vanilla and oak",
+                image: "/images/essential/2025-05-21 - High West-Bourbon-12062.jpg",
+                price: "Shop Now"
+              },
+              {
+                name: "Core Four",
+                description: "Our signature blend representing the four pillars of whiskey",
+                image: "/images/essential/2025-05-21 - High West-Core Four-12216.jpg",
+                price: "Shop Now"
+              },
+              {
+                name: "Grouping Selection",
+                description: "Curated collection showcasing our finest expressions",
+                image: "/images/essential/2025-05-21 - High West-grouping-11966.jpg",
                 price: "Shop Now"
               }
             ].map((product, index) => (
@@ -359,11 +378,11 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-bold text-dark-teal mb-2">{product.name}</h3>
-                  <p className="text-gray-700 mb-4">{product.description}</p>
+                  <h3 className="text-xl font-heading font-bold text-dark-teal mb-3">{product.name}</h3>
+                  <p className="text-gray-700 mb-6 font-spectral leading-relaxed">{product.description}</p>
                   <div className="flex justify-between items-center">
-                    <span className="text-2xl font-bold text-gold">{product.price}</span>
-                    <button className="bg-gold text-white px-4 py-2 rounded-full hover:bg-gold/90 transition-colors">
+                    <span className="text-lg font-elegant text-gold font-semibold">{product.price}</span>
+                    <button className="bg-gradient-gold text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold">
                       Shop Now
                     </button>
                   </div>
@@ -384,10 +403,11 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-4xl font-bold mb-6">Award-Winning Excellence</h2>
-            <p className="text-xl text-gold max-w-3xl mx-auto">
+            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-8">Award-Winning Excellence</h2>
+            <p className="text-xl font-spectral text-gold max-w-3xl mx-auto leading-relaxed">
               Our whiskeys have been recognized by the world&apos;s most prestigious spirits competitions.
             </p>
+            <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
 
           <div className="grid md:grid-cols-4 gap-8">

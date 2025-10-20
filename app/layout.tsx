@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -25,6 +25,27 @@ const crimson = Crimson_Text({
   subsets: ["latin"],
   weight: ['400', '600'],
   variable: "--font-crimson",
+  display: 'swap',
+});
+
+const cinzel = Cinzel({ 
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+  variable: "--font-cinzel",
+  display: 'swap',
+});
+
+const libre = Libre_Baskerville({ 
+  subsets: ["latin"],
+  weight: ['400', '700'],
+  variable: "--font-libre",
+  display: 'swap',
+});
+
+const spectral = Spectral({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: "--font-spectral",
   display: 'swap',
 });
 
@@ -88,7 +109,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable}`}>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
