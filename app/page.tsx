@@ -79,7 +79,7 @@ export default function Home() {
       <section className="relative min-h-screen flex items-center justify-center overflow-hidden">
         <motion.div style={{ y }} className="absolute inset-0">
           <Image
-            src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+            src="/images/2024-09-10 High West - OND-3543.jpg"
             alt="High West Distillery"
             fill
             className="object-cover"
@@ -103,7 +103,7 @@ export default function Home() {
             transition={{ duration: 0.8, delay: 0.2 }}
             className="text-xl md:text-2xl mb-8 text-gold"
           >
-            Crafting Exceptional Whiskey in the Heart of Utah
+            The Spirit of the West
           </motion.p>
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -147,17 +147,20 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-dark-teal mb-6">Our Story</h2>
+              <h2 className="text-4xl font-bold text-dark-teal mb-6">The Spirit of the West</h2>
               <p className="text-lg text-gray-700 mb-6">
-                Founded in 2006 in Park City, Utah, High West Distillery has been crafting 
-                exceptional American whiskey with a unique Rocky Mountain character. Our 
-                commitment to quality and innovation has made us a leader in the craft 
-                distilling movement.
+                It&apos;s the spirit that inspired us to ambitiously build a world-class 
+                distillation facility in the Wasatch Mountains of Utah. It&apos;s the spirit 
+                that emboldened us to push the boundaries of what you might call traditional 
+                whiskey. It&apos;s the spirit that keeps us with one foot steeped in the 
+                traditions of the West while looking toward new horizons.
               </p>
               <p className="text-lg text-gray-700 mb-8">
-                From our flagship Rendezvous Rye to our limited-edition releases, every 
-                bottle tells the story of our passion for whiskey and our love for the 
-                mountains that inspire us.
+                High West Whiskey is shaped by the adventurous, frontiering spirit that has 
+                come to define this great land, with quality to match. High West Whiskey&apos;s 
+                offerings are as vast as the hills where it&apos;s crafted, including our 
+                award-winning Bourbon and Double Rye, as well as a host of highly sought-after 
+                expressions like Rendezvous and Campfire.
               </p>
               <button className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors">
                 Learn More
@@ -171,7 +174,7 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/images/2024-09-10 High West - OND-3554.jpg"
                 alt="High West Distillery Interior"
                 width={600}
                 height={400}
@@ -203,21 +206,21 @@ export default function Home() {
             {[
               {
                 name: "Rendezvous Rye",
-                description: "Our flagship rye whiskey, aged in new charred oak barrels",
-                image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                price: "$89.99"
+                description: "Award-winning rye whiskey with complex flavors",
+                image: "/images/2025-05-21 - High West-Rendezvous-12072.jpg",
+                price: "Shop Now"
               },
               {
                 name: "Double Rye",
-                description: "A bold blend of two rye whiskeys with complex flavors",
-                image: "https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                price: "$79.99"
+                description: "Bold blend of two rye whiskeys with rich character",
+                image: "/images/2025-05-21 - High West-Double Rye-12064.jpg",
+                price: "Shop Now"
               },
               {
-                name: "Bourye",
-                description: "A unique blend of bourbon and rye, aged to perfection",
-                image: "https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80",
-                price: "$99.99"
+                name: "Campfire",
+                description: "Unique blend of bourbon, rye, and scotch",
+                image: "/images/2025-05-21 - High West-Campfire-12068.jpg",
+                price: "Shop Now"
               }
             ].map((product, index) => (
               <motion.div
@@ -306,7 +309,7 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="https://images.unsplash.com/photo-1556909114-f6e7ad7d3136?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80"
+                src="/images/2024-09-10 High West - OND-3560.jpg"
                 alt="High West Distillery Tasting Room"
                 width={600}
                 height={400}
@@ -381,7 +384,7 @@ export default function Home() {
             </div>
           </div>
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2024 High West Distillery. All rights reserved.</p>
+            <p>&copy; 2026 High West Distillery. All rights reserved.</p>
             <p className="mt-2 text-sm">Sip Responsibly. ©2026 High West Distillery, Park City, UT.</p>
           </div>
         </div>

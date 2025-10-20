@@ -9,12 +9,12 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        // High West Brand Colors
-        'dark-teal': '#0A4250',
-        'gold': '#B8722D',
-        'cream': '#E8E8E4',
-        'light-gold': '#D4A574',
-        'dark-gold': '#8B5A2B',
+        // High West Brand Colors (from client specifications)
+        'dark-teal': '#0A4250',     // BLUE/GREEN: R=10 G=66 B=80
+        'gold': '#B8722D',          // ORANGE CARAMEL: R=184 G=114 B=45
+        'cream': '#E8E8E4',         // LIGHT GREY: R=232 G=232 B=228
+        'light-gold': '#D4A574',    // Lighter gold variant
+        'dark-gold': '#8B5A2B',    // Darker gold variant
       },
       fontFamily: {
         sans: ['Inter', 'system-ui', 'sans-serif'],
