@@ -28,7 +28,7 @@ export default function Home() {
       <div className="fixed inset-0 bg-gradient-premium opacity-5 pointer-events-none"></div>
       
       {/* Navigation */}
-      <nav className="fixed top-0 w-full z-50 bg-white/90 backdrop-blur-xl border-b border-gold/30 shadow-lg">
+      <nav className="fixed top-0 w-full z-50 bg-white/95 backdrop-blur-xl border-b border-gold/20 shadow-lg transition-all duration-300">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex justify-between items-center h-20">
             <motion.div 
@@ -209,6 +209,73 @@ export default function Home() {
           animate={{ y: [-15, 15, -15] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
         />
+      </section>
+
+      {/* Premium Image Gallery Section */}
+      <section className="py-20 bg-gradient-to-br from-dark-teal to-dark-teal/90 relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-heading font-bold text-white mb-8">The High West Experience</h2>
+            <p className="text-xl font-spectral text-gold max-w-3xl mx-auto leading-relaxed">
+              Step into our world of exceptional whiskey craftsmanship and discover the artistry behind every bottle.
+            </p>
+            <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                image: "/images/essential/2024-09-10 High West - OND-3805.jpg",
+                title: "Distillery Heritage",
+                description: "Where tradition meets innovation in the heart of Utah"
+              },
+              {
+                image: "/images/essential/2024-09-10 High West - OND-3824.jpg", 
+                title: "Craftsmanship",
+                description: "Every bottle tells a story of dedication and passion"
+              },
+              {
+                image: "/images/essential/2024-09-10 High West - OND-3832.jpg",
+                title: "Mountain Spirit",
+                description: "Capturing the essence of the Rocky Mountains"
+              }
+            ].map((item, index) => (
+              <motion.div
+                key={item.title}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="relative group overflow-hidden rounded-2xl shadow-2xl"
+              >
+                <div className="relative h-80">
+                  <Image
+                    src={item.image}
+                    alt={item.title}
+                    fill
+                    className="object-cover transition-transform duration-700 group-hover:scale-110"
+                  />
+                  <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/80 via-transparent to-transparent"></div>
+                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                </div>
+                <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
+                  <h3 className="text-2xl font-heading font-bold mb-3 group-hover:text-gold transition-colors duration-300">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg font-spectral leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                    {item.description}
+                  </p>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
       </section>
 
       {/* About Section */}
@@ -393,6 +460,77 @@ export default function Home() {
         </div>
       </section>
 
+      {/* Testimonials Section */}
+      <section className="py-24 bg-gradient-to-br from-cream via-white to-cream relative overflow-hidden">
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+          <motion.div
+            initial={{ opacity: 0, y: 30 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.8 }}
+            viewport={{ once: true }}
+            className="text-center mb-16"
+          >
+            <h2 className="text-5xl md:text-6xl font-heading font-bold text-dark-teal mb-8">What Experts Say</h2>
+            <p className="text-xl font-spectral text-gray-700 max-w-3xl mx-auto leading-relaxed">
+              Industry recognition and expert reviews that speak to our commitment to excellence.
+            </p>
+            <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
+          </motion.div>
+
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
+            {[
+              {
+                quote: "High West has redefined what American whiskey can be. Their innovation while respecting tradition is remarkable.",
+                author: "Whisky Advocate",
+                rating: "95 Points"
+              },
+              {
+                quote: "The complexity and depth of High West's expressions showcase the true artistry of American distilling.",
+                author: "Wine Enthusiast", 
+                rating: "Double Gold"
+              },
+              {
+                quote: "A masterclass in blending and aging. High West consistently delivers exceptional quality and character.",
+                author: "San Francisco World Spirits Competition",
+                rating: "Gold Medal"
+              }
+            ].map((testimonial, index) => (
+              <motion.div
+                key={index}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.8, delay: index * 0.2 }}
+                viewport={{ once: true }}
+                className="bg-white rounded-2xl shadow-xl p-8 hover:shadow-2xl transition-all duration-500 group"
+              >
+                <div className="mb-6">
+                  <div className="flex text-gold mb-4">
+                    {[...Array(5)].map((_, i) => (
+                      <svg key={i} className="w-5 h-5 fill-current" viewBox="0 0 20 20">
+                        <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
+                      </svg>
+                    ))}
+                  </div>
+                  <p className="text-lg font-spectral text-gray-700 leading-relaxed italic">
+                    &ldquo;{testimonial.quote}&rdquo;
+                  </p>
+                </div>
+                <div className="border-t border-gray-200 pt-6">
+                  <div className="flex justify-between items-center">
+                    <div>
+                      <h4 className="font-heading font-bold text-dark-teal">{testimonial.author}</h4>
+                    </div>
+                    <div className="text-gold font-elegant font-semibold">
+                      {testimonial.rating}
+                    </div>
+                  </div>
+                </div>
+              </motion.div>
+            ))}
+          </div>
+        </div>
+      </section>
+
       {/* Awards Section */}
       <section id="awards" className="py-20 bg-dark-teal text-white">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -485,48 +623,55 @@ export default function Home() {
       </section>
 
       {/* Footer */}
-      <footer className="bg-dark-teal text-white py-12">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="grid md:grid-cols-4 gap-8">
-            <div>
-              <div className="mb-4">
+      <footer className="bg-gradient-to-br from-dark-teal to-dark-teal/90 text-white py-16 relative overflow-hidden">
+        {/* Background Pattern */}
+        <div className="absolute inset-0 bg-noise opacity-10"></div>
+        
+        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10">
+          <div className="grid md:grid-cols-4 gap-12">
+            <div className="md:col-span-2">
+              <div className="mb-6">
                 <Image
                   src="/logo/highwest_logo.png"
                   alt="High West Distillery"
-                  width={150}
-                  height={50}
-                  className="h-12 w-auto"
+                  width={180}
+                  height={60}
+                  className="h-16 w-auto filter brightness-0 invert"
                 />
               </div>
-              <p className="text-gray-300">
-                Crafting exceptional whiskey in the heart of Utah&apos;s Rocky Mountains.
+              <p className="text-lg font-spectral text-gray-300 leading-relaxed mb-6 max-w-md">
+                Crafting exceptional whiskey in the heart of Utah&apos;s Rocky Mountains. 
+                Where tradition meets innovation in every bottle.
               </p>
+              <div className="flex space-x-4">
+                <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold/30 transition-colors cursor-pointer">
+                  <span className="text-gold font-bold">f</span>
+                </div>
+                <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold/30 transition-colors cursor-pointer">
+                  <span className="text-gold font-bold">t</span>
+                </div>
+                <div className="w-10 h-10 bg-gold/20 rounded-full flex items-center justify-center hover:bg-gold/30 transition-colors cursor-pointer">
+                  <span className="text-gold font-bold">i</span>
+                </div>
+              </div>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Products</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-gold transition-colors">Rendezvous Rye</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Double Rye</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Bourye</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Limited Editions</a></li>
+              <h4 className="text-xl font-heading font-bold mb-6 text-gold">Products</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Rendezvous Rye</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Double Rye</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Campfire</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Bourbon Collection</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Limited Editions</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-lg font-semibold mb-4">Visit</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-gold transition-colors">Tastings</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Tours</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Events</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Private Parties</a></li>
-              </ul>
-            </div>
-            <div>
-              <h4 className="text-lg font-semibold mb-4">Connect</h4>
-              <ul className="space-y-2 text-gray-300">
-                <li><a href="#" className="hover:text-gold transition-colors">Instagram</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Facebook</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Twitter</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors">Newsletter</a></li>
+              <h4 className="text-xl font-heading font-bold mb-6 text-gold">Experience</h4>
+              <ul className="space-y-3 text-gray-300">
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Tastings</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Distillery Tours</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Private Events</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Whiskey Education</a></li>
               </ul>
             </div>
           </div>
