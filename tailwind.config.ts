@@ -24,6 +24,9 @@ const config: Config = {
         heading: ['Cinzel', 'serif'],
         elegant: ['Libre Baskerville', 'serif'],
         spectral: ['Spectral', 'serif'],
+        lora: ['Lora', 'serif'],
+        source: ['Source Serif Pro', 'serif'],
+        merriweather: ['Merriweather', 'serif'],
         mono: ['JetBrains Mono', 'monospace'],
       },
       fontSize: {
@@ -112,7 +115,7 @@ const config: Config = {
         'gradient-conic': 'conic-gradient(from 180deg at 50% 50%, var(--tw-gradient-stops))',
         'gradient-premium': 'linear-gradient(135deg, #0A4250 0%, #1a5a6b 25%, #2a6b7a 50%, #1a5a6b 75%, #0A4250 100%)',
         'gradient-gold': 'linear-gradient(135deg, #B8722D 0%, #D4A574 25%, #E8C4A0 50%, #D4A574 75%, #B8722D 100%)',
-        'gradient-hero': 'linear-gradient(135deg, rgba(10, 66, 80, 0.95) 0%, rgba(26, 90, 107, 0.9) 50%, rgba(10, 66, 80, 0.95) 100%)',
+        'gradient-hero': 'linear-gradient(135deg, rgba(10, 66, 80, 0.6) 0%, rgba(26, 90, 107, 0.4) 50%, rgba(10, 66, 80, 0.6) 100%)',
         'gradient-overlay': 'linear-gradient(180deg, rgba(0,0,0,0.1) 0%, rgba(0,0,0,0.3) 50%, rgba(0,0,0,0.6) 100%)',
         'noise': "url(\"data:image/svg+xml,%3Csvg viewBox='0 0 256 256' xmlns='http://www.w3.org/2000/svg'%3E%3Cfilter id='noiseFilter'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.65' numOctaves='4' stitchTiles='stitch'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23noiseFilter)'/%3E%3C/svg%3E\")",
       },

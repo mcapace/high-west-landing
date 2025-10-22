@@ -1,7 +1,7 @@
 'use client';
 
 import React, { useState, useEffect } from 'react';
-import { ChevronDown, MapPin, Award, Sparkles, Menu, X } from 'lucide-react';
+import { ChevronDown, MapPin, Award, Sparkles, Menu, X, Star, Shield, Zap, Crown, Gem, Flame } from 'lucide-react';
 import { motion } from 'framer-motion';
 import Image from 'next/image';
 
@@ -52,28 +52,33 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
-                About
+              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
+                <Shield size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+                <span>About</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
-                Products
+              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
+                <Gem size={18} className="group-hover:scale-110 transition-transform duration-300" />
+                <span>Products</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
-                Awards
+              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
+                <Crown size={18} className="group-hover:rotate-12 transition-transform duration-300" />
+                <span>Awards</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-body text-lg relative group">
-                Visit
+              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
+                <MapPin size={18} className="group-hover:scale-110 transition-transform duration-300" />
+                <span>Visit</span>
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
               <motion.button 
-                className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-semibold relative overflow-hidden group"
+                className="bg-gradient-gold text-white px-10 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 font-spectral font-semibold relative overflow-hidden group flex items-center space-x-3"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Shop Now</span>
+                <Zap size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+                <span className="relative z-10 tracking-wide">Shop Now</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </motion.button>
             </motion.div>
@@ -132,8 +137,8 @@ export default function Home() {
             transition={{ duration: 1, ease: "easeOut" }}
             className="mb-8"
           >
-            <h1 className="text-7xl md:text-8xl font-heading font-bold mb-6 tracking-wider leading-none">
-              <span className="block text-white drop-shadow-2xl">
+            <h1 className="text-8xl md:text-9xl font-heading font-bold mb-8 tracking-widest leading-none">
+              <span className="block text-white drop-shadow-2xl bg-gradient-to-r from-white via-gold/90 to-white bg-clip-text text-transparent">
                 HIGH WEST
               </span>
             </h1>
@@ -145,10 +150,10 @@ export default function Home() {
             transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
             className="mb-12"
           >
-            <p className="text-2xl md:text-3xl font-elegant font-normal tracking-wide leading-relaxed text-gold">
+            <p className="text-3xl md:text-4xl font-lora font-light tracking-wide leading-relaxed text-gold/90">
               The Spirit of the West
             </p>
-            <div className="w-32 h-0.5 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
+            <div className="w-40 h-1 bg-gradient-gold mx-auto mt-10 rounded-full shadow-lg"></div>
           </motion.div>
           
           <motion.div
@@ -293,7 +298,7 @@ export default function Home() {
             >
               <div className="space-y-6">
                 <motion.h2 
-                  className="text-5xl md:text-6xl font-heading font-bold text-dark-teal leading-tight"
+                  className="text-6xl md:text-7xl font-heading font-bold text-dark-teal leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -306,7 +311,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 <motion.p 
-                  className="text-lg font-spectral text-gray-700 leading-relaxed"
+                  className="text-xl font-source text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -318,7 +323,7 @@ export default function Home() {
                   whiskey.
                 </motion.p>
                 <motion.p 
-                  className="text-lg font-spectral text-gray-700 leading-relaxed"
+                  className="text-xl font-source text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -332,7 +337,7 @@ export default function Home() {
               </div>
               
               <motion.button 
-                className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 relative overflow-hidden group"
+                className="bg-gradient-gold text-white px-10 py-5 rounded-full text-xl font-spectral font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden group flex items-center space-x-3"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -340,7 +345,8 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <span className="relative z-10">Discover Our Story</span>
+                <Flame size={22} className="group-hover:rotate-12 transition-transform duration-300" />
+                <span className="relative z-10 tracking-wide">Discover Our Story</span>
                 <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
               </motion.button>
             </motion.div>

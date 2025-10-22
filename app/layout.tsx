@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral, Lora, Source_Serif_4, Merriweather } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -46,6 +46,27 @@ const spectral = Spectral({
   subsets: ["latin"],
   weight: ['300', '400', '500', '600', '700'],
   variable: "--font-spectral",
+  display: 'swap',
+});
+
+const lora = Lora({ 
+  subsets: ["latin"],
+  weight: ['400', '500', '600', '700'],
+  variable: "--font-lora",
+  display: 'swap',
+});
+
+const sourceSerif = Source_Serif_4({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '600', '700'],
+  variable: "--font-source-serif",
+  display: 'swap',
+});
+
+const merriweather = Merriweather({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '700', '900'],
+  variable: "--font-merriweather",
   display: 'swap',
 });
 
@@ -109,7 +130,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable} ${lora.variable} ${sourceSerif.variable} ${merriweather.variable}`}>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
