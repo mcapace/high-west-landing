@@ -265,8 +265,8 @@ export default function Home() {
                     fill
                     className="object-cover transition-transform duration-700 group-hover:scale-110"
                   />
-                  <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/80 via-transparent to-transparent"></div>
-                  <div className="absolute inset-0 bg-black/20 group-hover:bg-black/10 transition-all duration-500"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-dark-teal/90 via-transparent to-transparent"></div>
+                <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all duration-500"></div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
                   <h3 className="text-2xl font-heading font-bold mb-3 group-hover:text-gold transition-colors duration-300">
@@ -394,7 +394,7 @@ export default function Home() {
             <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
 
-          <div className="grid md:grid-cols-3 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
                 name: "Rendezvous Rye",
@@ -412,6 +412,12 @@ export default function Home() {
                 name: "Campfire",
                 description: "Unique blend of bourbon, rye, and scotch",
                 image: "/images/essential/2025-05-21 - High West-Campfire-12068.jpg",
+                price: "Shop Now"
+              },
+              {
+                name: "Bourbon",
+                description: "Premium bourbon with rich vanilla and oak notes",
+                image: "/images/essential/2025-05-21 - High West-Bourbon-12062.jpg",
                 price: "Shop Now"
               }
             ].map((product, index) => (
