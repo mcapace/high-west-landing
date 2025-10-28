@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral, Lora, Source_Serif_4, Merriweather, Outfit, Poppins, Montserrat, DM_Serif_Display } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral, Lora, Source_Serif_4, Merriweather, Outfit, Poppins, Montserrat, DM_Serif_Display, Crimson_Pro, Playfair_Display_SC, Cormorant_Infant } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -98,6 +98,27 @@ const dmSerif = DM_Serif_Display({
   display: 'swap',
 });
 
+const crimsonPro = Crimson_Pro({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: "--font-crimson-pro",
+  display: 'swap',
+});
+
+const playfairSC = Playfair_Display_SC({ 
+  subsets: ["latin"],
+  weight: ['400', '700', '900'],
+  variable: "--font-playfair-sc",
+  display: 'swap',
+});
+
+const cormorantInfant = Cormorant_Infant({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700'],
+  variable: "--font-cormorant-infant",
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: "High West Distillery - Crafting Exceptional Whiskey in Utah",
   description: "Discover High West's award-winning whiskeys crafted in Park City, Utah. From Rendezvous Rye to limited editions, experience the Rocky Mountain character in every bottle.",
@@ -158,7 +179,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable} ${lora.variable} ${sourceSerif.variable} ${merriweather.variable} ${outfit.variable} ${poppins.variable} ${montserrat.variable} ${dmSerif.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable} ${lora.variable} ${sourceSerif.variable} ${merriweather.variable} ${outfit.variable} ${poppins.variable} ${montserrat.variable} ${dmSerif.variable} ${crimsonPro.variable} ${playfairSC.variable} ${cormorantInfant.variable}`}>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
