@@ -7,7 +7,6 @@ import Image from 'next/image';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
-  const [isLoading, setIsLoading] = useState(true);
   // Removed problematic scroll effects
 
   useEffect(() => {
@@ -21,50 +20,9 @@ export default function Home() {
     };
   }, [isMenuOpen]);
 
-  useEffect(() => {
-    // Simulate loading time for better UX
-    const timer = setTimeout(() => {
-      setIsLoading(false);
-    }, 1500);
-
-    return () => clearTimeout(timer);
-  }, []);
 
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-white to-cream relative overflow-hidden">
-      {/* Loading Screen */}
-      {isLoading && (
-        <motion.div 
-          className="fixed inset-0 bg-dark-teal z-50 flex items-center justify-center"
-          initial={{ opacity: 1 }}
-          exit={{ opacity: 0 }}
-          transition={{ duration: 0.5 }}
-        >
-          <div className="text-center">
-            <motion.div
-              className="w-16 h-16 border-4 border-gold border-t-transparent rounded-full mx-auto mb-8"
-              animate={{ rotate: 360 }}
-              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
-            />
-            <motion.h2 
-              className="text-2xl font-heading text-white mb-2"
-              initial={{ opacity: 0, y: 20 }}
-              animate={{ opacity: 1, y: 0 }}
-              transition={{ delay: 0.2 }}
-            >
-              High West
-            </motion.h2>
-            <motion.p 
-              className="text-gold font-spectral"
-              initial={{ opacity: 0 }}
-              animate={{ opacity: 1 }}
-              transition={{ delay: 0.4 }}
-            >
-              Crafting Excellence
-            </motion.p>
-          </div>
-        </motion.div>
-      )}
 
       {/* Premium Background Effects */}
       <div className="fixed inset-0 bg-noise opacity-5 pointer-events-none"></div>
@@ -96,34 +54,28 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
-                <Shield size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-                <span>About</span>
+              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+                About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
-                <Gem size={18} className="group-hover:scale-110 transition-transform duration-300" />
-                <span>Products</span>
+              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+                Products
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
-                <Crown size={18} className="group-hover:rotate-12 transition-transform duration-300" />
-                <span>Awards</span>
+              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+                Awards
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-spectral text-lg relative group flex items-center space-x-2">
-                <MapPin size={18} className="group-hover:scale-110 transition-transform duration-300" />
-                <span>Visit</span>
+              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+                Visit
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
               <motion.button 
-                className="bg-gradient-gold text-white px-10 py-4 rounded-full hover:shadow-2xl hover:scale-105 transition-all duration-300 font-spectral font-semibold relative overflow-hidden group flex items-center space-x-3"
+                className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-elegant font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Zap size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10 tracking-wide">Shop Now</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                Shop Now
               </motion.button>
             </motion.div>
 
@@ -178,79 +130,50 @@ export default function Home() {
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <motion.div
-            initial={{ opacity: 0, y: 50 }}
+            initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, ease: "easeOut" }}
+            transition={{ duration: 0.8, ease: "easeOut" }}
             className="mb-8"
           >
-            <motion.h1 
-              className="text-8xl md:text-9xl font-heading font-bold mb-8 tracking-widest leading-none"
-              initial={{ scale: 0.8 }}
-              animate={{ scale: 1 }}
-              transition={{ duration: 1.5, ease: "easeOut" }}
-            >
-              <motion.span 
-                className="block text-white drop-shadow-2xl bg-gradient-to-r from-white via-gold/90 to-white bg-clip-text text-transparent"
-                initial={{ opacity: 0 }}
-                animate={{ opacity: 1 }}
-                transition={{ duration: 2, delay: 0.5 }}
-              >
+            <h1 className="text-7xl md:text-8xl font-display font-bold mb-8 tracking-wide leading-none">
+              <span className="block text-white drop-shadow-2xl">
                 HIGH WEST
-              </motion.span>
-            </motion.h1>
+              </span>
+            </h1>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.3, ease: "easeOut" }}
             className="mb-12"
           >
-            <motion.p 
-              className="text-3xl md:text-4xl font-lora font-light tracking-wide leading-relaxed text-gold/90"
-              initial={{ opacity: 0, scale: 0.9 }}
-              animate={{ opacity: 1, scale: 1 }}
-              transition={{ duration: 1, delay: 1 }}
-            >
+            <p className="text-2xl md:text-3xl font-elegant font-light tracking-wide leading-relaxed text-gold/90">
               The Spirit of the West
-            </motion.p>
-            <motion.div 
-              className="w-40 h-1 bg-gradient-gold mx-auto mt-10 rounded-full shadow-lg"
-              initial={{ width: 0 }}
-              animate={{ width: "10rem" }}
-              transition={{ duration: 1.5, delay: 1.2 }}
-            ></motion.div>
+            </p>
+            <div className="w-32 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </motion.div>
           
           <motion.div
-            initial={{ opacity: 0, y: 30 }}
+            initial={{ opacity: 0, y: 20 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.6, ease: "easeOut" }}
+            transition={{ duration: 0.8, delay: 0.6, ease: "easeOut" }}
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.button 
-              className="bg-gradient-gold text-white px-12 py-5 rounded-full text-xl font-spectral font-semibold hover:shadow-2xl transition-all duration-500 relative overflow-hidden group flex items-center space-x-3"
-              whileHover={{ scale: 1.05, y: -2 }}
+              className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-elegant font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: -50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 1.8 }}
             >
-              <Flame size={20} className="group-hover:rotate-12 transition-transform duration-300" />
-              <span className="relative z-10 tracking-wide">Discover Our Story</span>
-              <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+              Discover Our Story
             </motion.button>
             
             <motion.button 
-              className="border-2 border-white/50 text-white px-12 py-5 rounded-full text-xl font-spectral font-semibold hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-500 backdrop-blur-sm flex items-center space-x-3 group"
-              whileHover={{ scale: 1.05, y: -2 }}
+              className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-elegant font-semibold hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm"
+              whileHover={{ scale: 1.05 }}
               whileTap={{ scale: 0.95 }}
-              initial={{ opacity: 0, x: 50 }}
-              animate={{ opacity: 1, x: 0 }}
-              transition={{ duration: 1, delay: 2 }}
             >
-              <Gem size={20} className="group-hover:scale-110 transition-transform duration-300" />
-              <span>View Products</span>
+              View Products
             </motion.button>
           </motion.div>
         </div>
@@ -372,7 +295,7 @@ export default function Home() {
             >
               <div className="space-y-6">
                 <motion.h2 
-                  className="text-6xl md:text-7xl font-heading font-bold text-dark-teal leading-tight tracking-tight"
+                  className="text-5xl md:text-6xl font-display font-bold text-dark-teal leading-tight tracking-tight"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.2 }}
@@ -385,7 +308,7 @@ export default function Home() {
               
               <div className="space-y-6">
                 <motion.p 
-                  className="text-xl font-source text-gray-700 leading-relaxed"
+                  className="text-lg font-body text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.4 }}
@@ -397,7 +320,7 @@ export default function Home() {
                   whiskey.
                 </motion.p>
                 <motion.p 
-                  className="text-xl font-source text-gray-700 leading-relaxed"
+                  className="text-lg font-body text-gray-700 leading-relaxed"
                   initial={{ opacity: 0, y: 20 }}
                   whileInView={{ opacity: 1, y: 0 }}
                   transition={{ duration: 0.8, delay: 0.6 }}
@@ -411,7 +334,7 @@ export default function Home() {
               </div>
               
               <motion.button 
-                className="bg-gradient-gold text-white px-10 py-5 rounded-full text-xl font-spectral font-semibold hover:shadow-2xl hover:scale-105 transition-all duration-300 relative overflow-hidden group flex items-center space-x-3"
+                className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-elegant font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300"
                 initial={{ opacity: 0, y: 20 }}
                 whileInView={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.8, delay: 0.8 }}
@@ -419,9 +342,7 @@ export default function Home() {
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
-                <Flame size={22} className="group-hover:rotate-12 transition-transform duration-300" />
-                <span className="relative z-10 tracking-wide">Discover Our Story</span>
-                <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                Discover Our Story
               </motion.button>
             </motion.div>
             <motion.div
@@ -460,8 +381,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-heading font-bold text-dark-teal mb-8">Our Collection</h2>
-            <p className="text-xl font-spectral text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-display font-bold text-dark-teal mb-8">Our Collection</h2>
+            <p className="text-lg font-body text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Discover our award-winning whiskeys, each crafted with precision and passion 
               in the heart of the Rocky Mountains.
             </p>
@@ -513,16 +434,10 @@ export default function Home() {
                 </div>
                 <div className="p-6">
                   <h3 className="text-xl font-heading font-bold text-dark-teal mb-3">{product.name}</h3>
-                  <p className="text-gray-700 mb-6 font-spectral leading-relaxed">{product.description}</p>
+                  <p className="text-gray-700 mb-6 font-body leading-relaxed">{product.description}</p>
                   <div className="flex justify-center">
-                    <button className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-spectral font-semibold w-full group relative overflow-hidden">
-                      <span className="relative z-10 flex items-center justify-center space-x-2">
-                        <span>Shop Now</span>
-                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                        </svg>
-                      </span>
-                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
+                    <button className="bg-gradient-gold text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-elegant font-semibold w-full">
+                      Shop Now
                     </button>
                   </div>
                 </div>

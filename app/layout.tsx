@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral, Lora, Source_Serif_4, Merriweather } from "next/font/google";
+import { Inter, Playfair_Display, Cormorant_Garamond, Crimson_Text, Cinzel, Libre_Baskerville, Spectral, Lora, Source_Serif_4, Merriweather, Outfit, Poppins, Montserrat, DM_Serif_Display } from "next/font/google";
 import "./globals.css";
 
 const inter = Inter({ 
@@ -70,6 +70,34 @@ const merriweather = Merriweather({
   display: 'swap',
 });
 
+const outfit = Outfit({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-outfit",
+  display: 'swap',
+});
+
+const poppins = Poppins({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-poppins",
+  display: 'swap',
+});
+
+const montserrat = Montserrat({ 
+  subsets: ["latin"],
+  weight: ['300', '400', '500', '600', '700', '800', '900'],
+  variable: "--font-montserrat",
+  display: 'swap',
+});
+
+const dmSerif = DM_Serif_Display({ 
+  subsets: ["latin"],
+  weight: ['400'],
+  variable: "--font-dm-serif",
+  display: 'swap',
+});
+
 export const metadata: Metadata = {
   title: "High West Distillery - Crafting Exceptional Whiskey in Utah",
   description: "Discover High West's award-winning whiskeys crafted in Park City, Utah. From Rendezvous Rye to limited editions, experience the Rocky Mountain character in every bottle.",
@@ -130,7 +158,7 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable} ${lora.variable} ${sourceSerif.variable} ${merriweather.variable}`}>
+    <html lang="en" className={`${inter.variable} ${playfair.variable} ${cormorant.variable} ${crimson.variable} ${cinzel.variable} ${libre.variable} ${spectral.variable} ${lora.variable} ${sourceSerif.variable} ${merriweather.variable} ${outfit.variable} ${poppins.variable} ${montserrat.variable} ${dmSerif.variable}`}>
       <body className={`${inter.className} antialiased`}>
         {children}
       </body>
