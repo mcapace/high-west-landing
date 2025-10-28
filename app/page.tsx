@@ -54,24 +54,24 @@ export default function Home() {
               animate={{ opacity: 1, y: 0 }}
               transition={{ duration: 0.6, delay: 0.2, ease: "easeOut" }}
             >
-              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+              <a href="#about" className="text-dark-teal hover:text-gold transition-all duration-300 font-sans text-lg relative group">
                 About
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+              <a href="#products" className="text-dark-teal hover:text-gold transition-all duration-300 font-sans text-lg relative group">
                 Products
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+              <a href="#awards" className="text-dark-teal hover:text-gold transition-all duration-300 font-sans text-lg relative group">
                 Awards
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-elegant text-lg relative group">
+              <a href="#visit" className="text-dark-teal hover:text-gold transition-all duration-300 font-sans text-lg relative group">
                 Visit
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
               <motion.button 
-                className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-elegant font-semibold"
+                className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-sans font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
@@ -130,7 +130,7 @@ export default function Home() {
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <div className="mb-8">
-            <h1 className="text-7xl md:text-8xl font-display font-bold mb-8 tracking-wide leading-none">
+            <h1 className="text-7xl md:text-8xl font-sans font-bold mb-8 tracking-wide leading-none">
               <span className="block text-white drop-shadow-2xl">
                 HIGH WEST
               </span>
@@ -138,18 +138,18 @@ export default function Home() {
           </div>
           
           <div className="mb-12">
-            <p className="text-2xl md:text-3xl font-elegant font-light tracking-wide leading-relaxed text-gold/90">
+            <p className="text-2xl md:text-3xl font-sans font-light tracking-wide leading-relaxed text-gold/90">
               The Spirit of the West
             </p>
             <div className="w-32 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-elegant font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <button className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
               Discover Our Story
             </button>
             
-            <button className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-elegant font-semibold hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm">
+            <button className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm">
               View Products
             </button>
           </div>
@@ -162,8 +162,8 @@ export default function Home() {
       <section className="py-20 bg-gradient-to-br from-dark-teal to-dark-teal/90 relative overflow-hidden">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-white mb-8">The High West Experience</h2>
-            <p className="text-lg font-body text-gold max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-sans font-bold text-white mb-8">The High West Experience</h2>
+            <p className="text-lg font-sans text-gold max-w-3xl mx-auto leading-relaxed">
               Step into our world of exceptional whiskey craftsmanship and discover the artistry behind every bottle.
             </p>
             <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
@@ -202,10 +202,10 @@ export default function Home() {
                 <div className="absolute inset-0 bg-black/10 group-hover:bg-black/5 transition-all duration-500"></div>
                 </div>
                 <div className="absolute bottom-0 left-0 right-0 p-8 text-white">
-                  <h3 className="text-2xl font-heading font-bold mb-3 group-hover:text-gold transition-colors duration-300">
+                  <h3 className="text-2xl font-sans font-bold mb-3 group-hover:text-gold transition-colors duration-300">
                     {item.title}
                   </h3>
-                  <p className="text-lg font-body leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
+                  <p className="text-lg font-sans leading-relaxed opacity-90 group-hover:opacity-100 transition-opacity duration-300">
                     {item.description}
                   </p>
                 </div>
@@ -224,20 +224,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 gap-16 items-center">
             <div className="space-y-8">
               <div className="space-y-6">
-                <h2 className="text-5xl md:text-6xl font-display font-bold text-dark-teal leading-tight tracking-tight">
+                <h2 className="text-5xl md:text-6xl font-sans font-bold text-dark-teal leading-tight tracking-tight">
                   The Spirit of the West
                 </h2>
                 <div className="w-16 h-1 bg-gradient-gold rounded-full"></div>
               </div>
               
               <div className="space-y-6">
-                <p className="text-lg font-body text-gray-700 leading-relaxed">
+                <p className="text-lg font-sans text-gray-700 leading-relaxed">
                   It&apos;s the spirit that inspired us to ambitiously build a world-class 
                   distillation facility in the Wasatch Mountains of Utah. It&apos;s the spirit 
                   that emboldened us to push the boundaries of what you might call traditional 
                   whiskey.
                 </p>
-                <p className="text-lg font-body text-gray-700 leading-relaxed">
+                <p className="text-lg font-sans text-gray-700 leading-relaxed">
                   High West Whiskey is shaped by the adventurous, frontiering spirit that has 
                   come to define this great land, with quality to match. Our offerings are as 
                   vast as the hills where it&apos;s crafted, including our award-winning Bourbon 
@@ -245,7 +245,7 @@ export default function Home() {
                 </p>
               </div>
               
-              <button className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-elegant font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <button className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
                 Discover Our Story
               </button>
             </div>
@@ -273,8 +273,8 @@ export default function Home() {
       <section id="products" className="py-20 bg-cream">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-center mb-16">
-            <h2 className="text-5xl md:text-6xl font-display font-bold text-dark-teal mb-8">Our Collection</h2>
-            <p className="text-lg font-body text-gray-700 max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-sans font-bold text-dark-teal mb-8">Our Collection</h2>
+            <p className="text-lg font-sans text-gray-700 max-w-3xl mx-auto leading-relaxed">
               Discover our award-winning whiskeys, each crafted with precision and passion 
               in the heart of the Rocky Mountains.
             </p>
@@ -321,10 +321,10 @@ export default function Home() {
                   />
                 </div>
                 <div className="p-6">
-                  <h3 className="text-xl font-heading font-bold text-dark-teal mb-3">{product.name}</h3>
-                  <p className="text-gray-700 mb-6 font-body leading-relaxed">{product.description}</p>
+                  <h3 className="text-xl font-sans font-bold text-dark-teal mb-3">{product.name}</h3>
+                  <p className="text-gray-700 mb-6 font-sans leading-relaxed">{product.description}</p>
                   <div className="flex justify-center">
-                    <button className="bg-gradient-gold text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-elegant font-semibold w-full">
+                    <button className="bg-gradient-gold text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-sans font-semibold w-full">
                       Shop Now
                     </button>
                   </div>
@@ -346,8 +346,8 @@ export default function Home() {
             viewport={{ once: true }}
             className="text-center mb-16"
           >
-            <h2 className="text-5xl md:text-6xl font-heading font-bold mb-8">Award-Winning Excellence</h2>
-            <p className="text-xl font-spectral text-gold max-w-3xl mx-auto leading-relaxed">
+            <h2 className="text-5xl md:text-6xl font-sans font-bold mb-8">Award-Winning Excellence</h2>
+            <p className="text-xl font-sans text-gold max-w-3xl mx-auto leading-relaxed">
               Our whiskeys have been recognized by the world&apos;s most prestigious spirits competitions.
             </p>
             <div className="w-24 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
@@ -371,8 +371,8 @@ export default function Home() {
                 <div className="bg-gold/20 rounded-full w-16 h-16 flex items-center justify-center mx-auto mb-4">
                   <Award className="text-gold" size={32} />
                 </div>
-                <h3 className="text-lg font-semibold mb-2">{award.award}</h3>
-                <p className="text-sm text-gray-300">{award.name}</p>
+                <h3 className="text-lg font-sans font-semibold mb-2">{award.award}</h3>
+                <p className="text-sm font-sans text-gray-300">{award.name}</p>
               </motion.div>
             ))}
           </div>
@@ -404,22 +404,22 @@ export default function Home() {
               transition={{ duration: 0.8 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-4xl font-bold text-dark-teal mb-6">Visit Our Distillery</h2>
-              <p className="text-lg text-gray-700 mb-6">
+              <h2 className="text-4xl font-sans font-bold text-dark-teal mb-6">Visit Our Distillery</h2>
+              <p className="text-lg font-sans text-gray-700 mb-6">
                 Experience the magic of High West firsthand. Join us for tastings, tours, 
                 and an unforgettable journey through the world of craft whiskey.
               </p>
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <MapPin className="text-gold mr-3" size={20} />
-                  <span className="text-gray-700">703 Park Avenue, Park City, UT 84060</span>
+                  <span className="text-gray-700 font-sans">703 Park Avenue, Park City, UT 84060</span>
                 </div>
                 <div className="flex items-center">
                   <Sparkles className="text-gold mr-3" size={20} />
-                  <span className="text-gray-700">Tastings & Tours Daily</span>
+                  <span className="text-gray-700 font-sans">Tastings & Tours Daily</span>
                 </div>
               </div>
-              <button className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors">
+              <button className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors font-sans font-semibold">
                 Plan Your Visit
               </button>
             </motion.div>
@@ -444,7 +444,7 @@ export default function Home() {
                   className="h-16 w-auto filter brightness-0 invert"
                 />
               </div>
-              <p className="text-lg font-spectral text-gray-300 leading-relaxed mb-6 max-w-md">
+              <p className="text-lg font-sans text-gray-300 leading-relaxed mb-6 max-w-md">
                 Crafting exceptional whiskey in the heart of Utah&apos;s Rocky Mountains. 
                 Where tradition meets innovation in every bottle.
               </p>
@@ -461,28 +461,28 @@ export default function Home() {
               </div>
             </div>
             <div>
-              <h4 className="text-xl font-heading font-bold mb-6 text-gold">Products</h4>
+              <h4 className="text-xl font-sans font-bold mb-6 text-gold">Products</h4>
               <ul className="space-y-3 text-gray-300">
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Rendezvous Rye</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Double Rye</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Campfire</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Bourbon Collection</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Limited Editions</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Rendezvous Rye</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Double Rye</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Campfire</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Bourbon Collection</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Limited Editions</a></li>
               </ul>
             </div>
             <div>
-              <h4 className="text-xl font-heading font-bold mb-6 text-gold">Experience</h4>
+              <h4 className="text-xl font-sans font-bold mb-6 text-gold">Experience</h4>
               <ul className="space-y-3 text-gray-300">
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Tastings</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Distillery Tours</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Private Events</a></li>
-                <li><a href="#" className="hover:text-gold transition-colors font-spectral">Whiskey Education</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Tastings</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Distillery Tours</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Private Events</a></li>
+                <li><a href="#" className="hover:text-gold transition-colors font-sans">Whiskey Education</a></li>
               </ul>
             </div>
           </div>
           <div className="border-t border-gray-600 mt-8 pt-8 text-center text-gray-300">
-            <p>&copy; 2026 High West Distillery. All rights reserved.</p>
-            <p className="mt-2 text-sm">Sip Responsibly. ©2026 High West Distillery, Park City, UT.</p>
+            <p className="font-sans">&copy; 2026 High West Distillery. All rights reserved.</p>
+            <p className="mt-2 text-sm font-sans">Sip Responsibly. ©2026 High West Distillery, Park City, UT.</p>
           </div>
         </div>
       </footer>
