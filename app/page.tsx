@@ -7,6 +7,7 @@ import Image from 'next/image';
 
 export default function Home() {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(true);
   // Removed problematic scroll effects
 
   useEffect(() => {
@@ -20,8 +21,51 @@ export default function Home() {
     };
   }, [isMenuOpen]);
 
+  useEffect(() => {
+    // Simulate loading time for better UX
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1500);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className="min-h-screen bg-gradient-to-br from-cream via-white to-cream relative overflow-hidden">
+      {/* Loading Screen */}
+      {isLoading && (
+        <motion.div 
+          className="fixed inset-0 bg-dark-teal z-50 flex items-center justify-center"
+          initial={{ opacity: 1 }}
+          exit={{ opacity: 0 }}
+          transition={{ duration: 0.5 }}
+        >
+          <div className="text-center">
+            <motion.div
+              className="w-16 h-16 border-4 border-gold border-t-transparent rounded-full mx-auto mb-8"
+              animate={{ rotate: 360 }}
+              transition={{ duration: 1, repeat: Infinity, ease: "linear" }}
+            />
+            <motion.h2 
+              className="text-2xl font-heading text-white mb-2"
+              initial={{ opacity: 0, y: 20 }}
+              animate={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.2 }}
+            >
+              High West
+            </motion.h2>
+            <motion.p 
+              className="text-gold font-spectral"
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              transition={{ delay: 0.4 }}
+            >
+              Crafting Excellence
+            </motion.p>
+          </div>
+        </motion.div>
+      )}
+
       {/* Premium Background Effects */}
       <div className="fixed inset-0 bg-noise opacity-5 pointer-events-none"></div>
       <div className="fixed inset-0 bg-gradient-premium opacity-5 pointer-events-none"></div>
@@ -123,37 +167,59 @@ export default function Home() {
             src="/images/essential/2024-09-10 High West - OND-3543.jpg"
             alt="High West Distillery"
             fill
-            className="object-cover"
+            className="object-cover transition-opacity duration-1000"
             priority
+            sizes="100vw"
+            quality={90}
           />
-          <div className="absolute inset-0 bg-gradient-hero"></div>
-          <div className="absolute inset-0 bg-gradient-overlay"></div>
+          <div className="absolute inset-0 bg-gradient-hero opacity-0 animate-fade-in"></div>
+          <div className="absolute inset-0 bg-gradient-overlay opacity-0 animate-fade-in" style={{animationDelay: '0.5s'}}></div>
         </div>
 
         <div className="relative z-10 text-center text-white px-4 max-w-6xl mx-auto">
           <motion.div
             initial={{ opacity: 0, y: 50 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, ease: "easeOut" }}
+            transition={{ duration: 1.2, ease: "easeOut" }}
             className="mb-8"
           >
-            <h1 className="text-8xl md:text-9xl font-heading font-bold mb-8 tracking-widest leading-none">
-              <span className="block text-white drop-shadow-2xl bg-gradient-to-r from-white via-gold/90 to-white bg-clip-text text-transparent">
+            <motion.h1 
+              className="text-8xl md:text-9xl font-heading font-bold mb-8 tracking-widest leading-none"
+              initial={{ scale: 0.8 }}
+              animate={{ scale: 1 }}
+              transition={{ duration: 1.5, ease: "easeOut" }}
+            >
+              <motion.span 
+                className="block text-white drop-shadow-2xl bg-gradient-to-r from-white via-gold/90 to-white bg-clip-text text-transparent"
+                initial={{ opacity: 0 }}
+                animate={{ opacity: 1 }}
+                transition={{ duration: 2, delay: 0.5 }}
+              >
                 HIGH WEST
-              </span>
-            </h1>
+              </motion.span>
+            </motion.h1>
           </motion.div>
           
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 1, delay: 0.3, ease: "easeOut" }}
+            transition={{ duration: 1.2, delay: 0.8, ease: "easeOut" }}
             className="mb-12"
           >
-            <p className="text-3xl md:text-4xl font-lora font-light tracking-wide leading-relaxed text-gold/90">
+            <motion.p 
+              className="text-3xl md:text-4xl font-lora font-light tracking-wide leading-relaxed text-gold/90"
+              initial={{ opacity: 0, scale: 0.9 }}
+              animate={{ opacity: 1, scale: 1 }}
+              transition={{ duration: 1, delay: 1 }}
+            >
               The Spirit of the West
-            </p>
-            <div className="w-40 h-1 bg-gradient-gold mx-auto mt-10 rounded-full shadow-lg"></div>
+            </motion.p>
+            <motion.div 
+              className="w-40 h-1 bg-gradient-gold mx-auto mt-10 rounded-full shadow-lg"
+              initial={{ width: 0 }}
+              animate={{ width: "10rem" }}
+              transition={{ duration: 1.5, delay: 1.2 }}
+            ></motion.div>
           </motion.div>
           
           <motion.div
@@ -163,20 +229,28 @@ export default function Home() {
             className="flex flex-col sm:flex-row gap-6 justify-center items-center"
           >
             <motion.button 
-              className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-semibold hover:shadow-2xl transition-all duration-500 relative overflow-hidden group"
+              className="bg-gradient-gold text-white px-12 py-5 rounded-full text-xl font-spectral font-semibold hover:shadow-2xl transition-all duration-500 relative overflow-hidden group flex items-center space-x-3"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: -50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 1.8 }}
             >
-              <span className="relative z-10">Discover Our Story</span>
+              <Flame size={20} className="group-hover:rotate-12 transition-transform duration-300" />
+              <span className="relative z-10 tracking-wide">Discover Our Story</span>
               <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
             </motion.button>
             
             <motion.button 
-              className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-semibold hover:border-gold hover:text-gold transition-all duration-500 backdrop-blur-sm"
+              className="border-2 border-white/50 text-white px-12 py-5 rounded-full text-xl font-spectral font-semibold hover:border-gold hover:text-gold hover:bg-gold/10 transition-all duration-500 backdrop-blur-sm flex items-center space-x-3 group"
               whileHover={{ scale: 1.05, y: -2 }}
               whileTap={{ scale: 0.95 }}
+              initial={{ opacity: 0, x: 50 }}
+              animate={{ opacity: 1, x: 0 }}
+              transition={{ duration: 1, delay: 2 }}
             >
-              View Products
+              <Gem size={20} className="group-hover:scale-110 transition-transform duration-300" />
+              <span>View Products</span>
             </motion.button>
           </motion.div>
         </div>
@@ -440,10 +514,15 @@ export default function Home() {
                 <div className="p-6">
                   <h3 className="text-xl font-heading font-bold text-dark-teal mb-3">{product.name}</h3>
                   <p className="text-gray-700 mb-6 font-spectral leading-relaxed">{product.description}</p>
-                  <div className="flex justify-between items-center">
-                    <span className="text-lg font-elegant text-gold font-semibold">{product.price}</span>
-                    <button className="bg-gradient-gold text-white px-6 py-2 rounded-full hover:shadow-lg hover:scale-105 transition-all duration-300 font-semibold">
-                      Shop Now
+                  <div className="flex justify-center">
+                    <button className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-spectral font-semibold w-full group relative overflow-hidden">
+                      <span className="relative z-10 flex items-center justify-center space-x-2">
+                        <span>Shop Now</span>
+                        <svg className="w-4 h-4 group-hover:translate-x-1 transition-transform duration-300" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+                        </svg>
+                      </span>
+                      <div className="absolute inset-0 bg-gradient-to-r from-transparent via-white/20 to-transparent -translate-x-full group-hover:translate-x-full transition-transform duration-700"></div>
                     </button>
                   </div>
                 </div>

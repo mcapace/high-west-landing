@@ -45,7 +45,6 @@ const config: Config = {
         '9xl': ['8rem', { lineHeight: '1' }],
       },
       animation: {
-        'fade-in': 'fadeIn 0.5s ease-in-out',
         'slide-up': 'slideUp 0.5s ease-out',
         'bounce-slow': 'bounce 2s infinite',
         'float': 'float 6s ease-in-out infinite',
@@ -59,6 +58,7 @@ const config: Config = {
         'fade-in-up': 'fadeInUp 0.8s ease-out',
         'rotate-slow': 'rotate 20s linear infinite',
         'pulse-glow': 'pulseGlow 3s ease-in-out infinite',
+        'fade-in': 'fadeIn 1s ease-out forwards',
       },
       keyframes: {
         fadeIn: {
