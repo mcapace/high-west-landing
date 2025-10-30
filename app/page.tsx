@@ -70,13 +70,16 @@ export default function Home() {
                 Visit
                 <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gold transition-all duration-300 group-hover:w-full"></span>
               </a>
-              <motion.button 
+              <motion.a 
+                href="https://ship.highwest.com/collections/core-whiskey"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="bg-gradient-gold text-white px-8 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-sans font-semibold"
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
               >
                 Shop Now
-              </motion.button>
+              </motion.a>
             </motion.div>
 
             {/* Mobile Menu Button */}
@@ -104,9 +107,9 @@ export default function Home() {
               <a href="#products" className="block text-dark-teal hover:text-gold transition-colors">Products</a>
               <a href="#awards" className="block text-dark-teal hover:text-gold transition-colors">Awards</a>
               <a href="#visit" className="block text-dark-teal hover:text-gold transition-colors">Visit</a>
-              <button className="w-full bg-gold text-white px-6 py-2 rounded-full hover:bg-gold/90 transition-colors">
+              <a href="https://ship.highwest.com/collections/core-whiskey" target="_blank" rel="noopener noreferrer" className="w-full bg-gold text-white px-6 py-2 rounded-full hover:bg-gold/90 transition-colors text-center block">
                 Shop Now
-              </button>
+              </a>
             </div>
           </motion.div>
         )}
@@ -138,20 +141,20 @@ export default function Home() {
           </div>
           
           <div className="mb-12">
-            <p className="text-2xl md:text-3xl font-sans font-light tracking-wide leading-relaxed text-gold/90">
+            <p className="text-2xl md:text-3xl font-sans font-light tracking-wide leading-relaxed text-white drop-shadow-[0_4px_12px_rgba(0,0,0,0.8)]">
               The Spirit of the West
             </p>
             <div className="w-32 h-1 bg-gradient-gold mx-auto mt-8 rounded-full"></div>
           </div>
           
           <div className="flex flex-col sm:flex-row gap-6 justify-center items-center">
-            <button className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+            <a href="https://highwest.com/pages/about-us" target="_blank" rel="noopener noreferrer" className="bg-gradient-gold text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
               Discover Our Story
-            </button>
+            </a>
             
-            <button className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm">
+            <a href="https://ship.highwest.com/collections/all-products" target="_blank" rel="noopener noreferrer" className="border-2 border-white/50 text-white px-10 py-4 rounded-full text-lg font-sans font-semibold hover:border-gold hover:text-gold transition-all duration-300 backdrop-blur-sm">
               View Products
-            </button>
+            </a>
           </div>
         </div>
 
@@ -174,22 +177,28 @@ export default function Home() {
               {
                 image: "/images/essential/2024-09-10 High West - OND-3805.jpg",
                 title: "Distillery Heritage",
-                description: "Where tradition meets innovation in the heart of Utah"
+                description: "Where tradition meets innovation in the heart of Utah",
+                link: "https://highwest.com/pages/distillery"
               },
               {
                 image: "/images/essential/2024-09-10 High West - OND-3824.jpg", 
                 title: "Craftsmanship",
-                description: "Every bottle tells a story of dedication and passion"
+                description: "Every bottle tells a story of dedication and passion",
+                link: "https://highwest.com/pages/why-we-blend"
               },
               {
                 image: "/images/essential/2024-09-10 High West - OND-3832.jpg",
                 title: "Mountain Spirit",
-                description: "Capturing the essence of the Rocky Mountains"
+                description: "Our enduring commitment to keep the west wild",
+                link: "https://highwest.com/pages/protect-the-west"
               }
             ].map((item, index) => (
-              <div
+              <a
                 key={item.title}
-                className="relative group overflow-hidden rounded-2xl shadow-2xl"
+                href={item.link}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="relative group overflow-hidden rounded-2xl shadow-2xl block"
               >
                 <div className="relative h-80">
                   <Image
@@ -209,7 +218,7 @@ export default function Home() {
                     {item.description}
                   </p>
                 </div>
-              </div>
+              </a>
             ))}
           </div>
         </div>
@@ -245,9 +254,9 @@ export default function Home() {
                 </p>
               </div>
               
-              <button className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300">
+              <a href="https://highwest.com/pages/about-us" target="_blank" rel="noopener noreferrer" className="bg-gradient-gold text-white px-8 py-4 rounded-full text-lg font-sans font-semibold hover:shadow-xl hover:scale-105 transition-all duration-300 inline-block">
                 Discover Our Story
-              </button>
+              </a>
             </div>
             <div className="relative group">
               <div className="relative overflow-hidden rounded-2xl shadow-2xl">
@@ -284,28 +293,32 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-8">
             {[
               {
-                name: "Rendezvous Rye",
-                description: "Award-winning rye whiskey with complex flavors",
-                image: "/images/essential/2025-05-21 - High West-Rendezvous-12072.jpg",
-                price: "Shop Now"
+                name: "Bourbon",
+                description: "Premium bourbon with rich vanilla and oak notes",
+                image: "/images/essential/2025-05-21 - High West-Bourbon-12062.jpg",
+                price: "Shop Now",
+                link: "https://ship.highwest.com/collections/core-whiskey/products/bourbon"
               },
               {
                 name: "Double Rye",
                 description: "Bold blend of two rye whiskeys with rich character",
                 image: "/images/essential/2025-05-21 - High West-Double Rye-12064.jpg",
-                price: "Shop Now"
+                price: "Shop Now",
+                link: "https://ship.highwest.com/collections/core-whiskey/products/double-rye"
+              },
+              {
+                name: "Rendezvous Rye",
+                description: "Award-winning rye whiskey with complex flavors",
+                image: "/images/essential/2025-05-21 - High West-Rendezvous-12072.jpg",
+                price: "Shop Now",
+                link: "https://ship.highwest.com/collections/core-whiskey/products/rendezvous-rye"
               },
               {
                 name: "Campfire",
                 description: "Unique blend of bourbon, rye, and scotch",
                 image: "/images/essential/2025-05-21 - High West-Campfire-12068.jpg",
-                price: "Shop Now"
-              },
-              {
-                name: "Bourbon",
-                description: "Premium bourbon with rich vanilla and oak notes",
-                image: "/images/essential/2025-05-21 - High West-Bourbon-12062.jpg",
-                price: "Shop Now"
+                price: "Shop Now",
+                link: "https://ship.highwest.com/collections/core-whiskey/products/campfire"
               }
             ].map((product, index) => (
               <div
@@ -324,9 +337,9 @@ export default function Home() {
                   <h3 className="text-xl font-sans font-bold text-dark-teal mb-3">{product.name}</h3>
                   <p className="text-gray-700 mb-6 font-sans leading-relaxed">{product.description}</p>
                   <div className="flex justify-center">
-                    <button className="bg-gradient-gold text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-sans font-semibold w-full">
+                    <a href={product.link} target="_blank" rel="noopener noreferrer" className="bg-gradient-gold text-white px-6 py-3 rounded-full hover:shadow-xl hover:scale-105 transition-all duration-300 font-sans font-semibold w-full text-center block">
                       Shop Now
-                    </button>
+                    </a>
                   </div>
                 </div>
               </div>
@@ -419,9 +432,9 @@ export default function Home() {
                   <span className="text-gray-700 font-sans">Tastings & Tours Daily</span>
                 </div>
               </div>
-              <button className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors font-sans font-semibold">
+              <a href="https://highwest.com/pages/distillery" target="_blank" rel="noopener noreferrer" className="bg-gold text-white px-6 py-3 rounded-full hover:bg-gold/90 transition-colors font-sans font-semibold inline-block">
                 Plan Your Visit
-              </button>
+              </a>
             </motion.div>
           </div>
         </div>

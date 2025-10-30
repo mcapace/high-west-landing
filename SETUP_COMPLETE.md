@@ -170,3 +170,4 @@ Your High West landing page is production-ready with:
 **Built with ❤️ for High West Distillery**
 
 *Crafting exceptional whiskey in the heart of Utah's Rocky Mountains.*
+
