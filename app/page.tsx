@@ -175,20 +175,20 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                image: "/images/essential/2024-09-10 High West - OND-3805.jpg",
+                image: "/images/essential/Saloon.jpg",
                 title: "Distillery Heritage",
                 description: "Where tradition meets innovation in the heart of Utah",
-                link: "https://highwest.com/pages/distillery"
+                link: "https://highwest.com/pages/about-us"
               },
               {
-                image: "/images/essential/2024-09-10 High West - OND-3824.jpg", 
+                image: "/images/essential/2024-09-10 High West - OND-3832.jpg", 
                 title: "Craftsmanship",
                 description: "Every bottle tells a story of dedication and passion",
                 link: "https://highwest.com/pages/why-we-blend"
               },
               {
-                image: "/images/essential/2024-09-10 High West - OND-3832.jpg",
-                title: "Mountain Spirit",
+                image: "/images/essential/HWDeck.jpg",
+                title: "Protect the West",
                 description: "Our enduring commitment to keep the west wild",
                 link: "https://highwest.com/pages/protect-the-west"
               }
@@ -404,8 +404,8 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="/images/essential/2024-09-10 High West - OND-3560.jpg"
-                alt="High West Distillery Tasting Room"
+                src="/images/essential/Distillery.jpg"
+                alt="High West Distillery"
                 width={600}
                 height={400}
                 className="rounded-lg shadow-xl"
@@ -425,7 +425,7 @@ export default function Home() {
               <div className="space-y-4 mb-8">
                 <div className="flex items-center">
                   <MapPin className="text-gold mr-3" size={20} />
-                  <span className="text-gray-700 font-sans">703 Park Avenue, Park City, UT 84060</span>
+                  <span className="text-gray-700 font-sans">27649 Old Lincoln Hwy, Wanship, UT 84017</span>
                 </div>
                 <div className="flex items-center">
                   <Sparkles className="text-gold mr-3" size={20} />
