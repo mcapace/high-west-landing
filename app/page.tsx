@@ -175,7 +175,7 @@ export default function Home() {
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {[
               {
-                image: "/images/essential/Saloon.jpg",
+                image: "/images/essential/2024-09-10 High West - OND-3805.jpg",
                 title: "Distillery Heritage",
                 description: "Where tradition meets innovation in the heart of Utah",
                 link: "https://highwest.com/pages/about-us"
@@ -187,7 +187,7 @@ export default function Home() {
                 link: "https://highwest.com/pages/why-we-blend"
               },
               {
-                image: "/images/essential/HWDeck.jpg",
+                image: "/images/essential/2024-09-10 High West - OND-3832.jpg",
                 title: "Protect the West",
                 description: "Our enduring commitment to keep the west wild",
                 link: "https://highwest.com/pages/protect-the-west"
@@ -404,7 +404,7 @@ export default function Home() {
               className="relative"
             >
               <Image
-                src="/images/essential/Distillery.jpg"
+                src="/images/essential/2024-09-10 High West - OND-3560.jpg"
                 alt="High West Distillery"
                 width={600}
                 height={400}
